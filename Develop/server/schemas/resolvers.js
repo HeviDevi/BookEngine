@@ -5,7 +5,13 @@ const resolvers = {
     users: async () => {
       return await User.find({});
     }
-  }
+  },
+
+
+
 };
 
 module.exports = resolvers;
+//,user: async (parent, { username}) => {
+  //return await User.findOne({ username : username})
+//}
