@@ -1,5 +1,6 @@
 const { User } = require('../models');
 
+
 const resolvers = {
   Query: {
     users: async () => {
