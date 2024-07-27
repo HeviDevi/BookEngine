@@ -12,7 +12,10 @@ const resolvers = {
 
   Mutation: {
     addUser: async (parent, {username, email, password}) => {
-      const user = await User.create(username, email, password);
+      console.log("Inside resolver");
+      console.log(username);
+      const user = await User.create({username, email, password});
+      console.log(user)
       const token = signToken(user);
       return { token, user };
     },
