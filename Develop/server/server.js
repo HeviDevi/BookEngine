@@ -27,10 +27,9 @@ const app = express();
 
 
 // if we're in production, serve client/build as static assets
-//changed from client/build to client/dist
-if (process.env.NODE_ENV === 'production') {
-  app.use(express.static(path.join(__dirname, '../client/dist/index.html')));
-};
+// if (process.env.NODE_ENV === 'production') {
+  app.use(express.static(path.join(__dirname, '../client/dist')));
+// };
 
 // app.use(routes);
 const startApolloServer = async () => {
@@ -39,10 +38,9 @@ const startApolloServer = async () => {
 
     app.use(express.urlencoded({ extended: false }));
     app.use(express.json());
-    app.use(routes);
-// catch all route
+
     app.get('*', (req, res) => {
-      res.sendFile(path.join(__dirname, '../client/dist/index.html'));
+      res.sendFile(path.join(__dirname, '../client/dist'));
     });
 
     // Correctly apply the Apollo Server middleware to the Express app
