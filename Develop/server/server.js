@@ -1,5 +1,6 @@
 const express = require('express');
 const path = require('path');
+const dotenv = require('dotenv').config();
 
 const routes = require('./routes');
 const { ApolloServer } = require('@apollo/server');
@@ -27,8 +28,8 @@ const app = express();
 
 // if we're in production, serve client/build as static assets
 if (process.env.NODE_ENV === 'production') {
-  app.use(express.static(path.join(__dirname, '../client/build')));
-}
+  app.use(express.static(path.join(__dirname, '../client/dist/index.html')));
+};
 
 // app.use(routes);
 const startApolloServer = async () => {
@@ -37,6 +38,11 @@ const startApolloServer = async () => {
 
     app.use(express.urlencoded({ extended: false }));
     app.use(express.json());
+    app.use(routes);
+
+    app.get('*', (req, res) => {
+      res.sendFile(path.join(__dirname, '../client/dist/index.html'));
+    });
 
     // Correctly apply the Apollo Server middleware to the Express app
     app.use('/graphql', expressMiddleware(server, {
