@@ -21,4 +21,27 @@ mutation login($email: String!, $password: String!) {
     }
   }
 } 
-`
+`;
+
+export const typeDefs = gql`
+input BookInput {
+bookId: ID!
+authors: [String!]
+description: String!
+title: String!
+image: String
+link: String
+}
+`;
+
+export const SAVE_BOOK = gql`
+mutation saveBook($bookInput: BookInput!) {
+  saveBook(bookInput: $bookInput){
+  username
+  email
+  savedBooks {
+  title
+    }
+  }
+}
+`;

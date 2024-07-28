@@ -39,6 +39,11 @@ const resolvers = {
       const token = signToken(user);
       console.log("Created Token", token);
       return { token, user };
+    },
+    saveBook: async (parent, {BookInput}) => {
+      console.log('inside save book resolver');
+      consolelog(BookInput);
+
     }
   },
 };
