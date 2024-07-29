@@ -42,7 +42,7 @@ const resolvers = {
     },
     saveBook: async (parent, {BookInput}) => {
       console.log('inside save book resolver');
-      consolelog(BookInput);
+      console.log(BookInput);
 
     }
   },
