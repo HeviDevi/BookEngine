@@ -26,7 +26,7 @@ To use BookEngine, follow these steps:
 3. View book details and save your favorite books to your reading list.
 
 ## Screenshot
-![BookEngine Screenshot](path/to/screenshot.png)
+![BookEngine Screenshot](client/src/asset.BookEngineScreeshot.png)
 
 ## Credits
 This app was refactored by Devon "HeviDevi" Ross. Thanks to UCF & edX for the starter code.
