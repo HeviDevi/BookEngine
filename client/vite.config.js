@@ -18,7 +18,7 @@ export default defineConfig({
   },
   build: {
     rollupOptions: {
-      external: ['react-botstrap', 'bootstrap/dist/css/bootstrap.min.css']
+      external: ['react-botstrap']
     }
   }
 })
