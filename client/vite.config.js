@@ -15,5 +15,10 @@ export default defineConfig({
         changeOrigin: true
       }
     }
+  },
+  build: {
+    rollupOptions: {
+      external: ['react-botstrap', 'bootstrap/dist/css/bootstrap.min.css']
+    }
   }
 })
