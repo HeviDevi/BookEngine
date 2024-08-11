@@ -23,20 +23,10 @@ mutation login($email: String!, $password: String!) {
 } 
 `;
 
-export const typeDefs = gql`
-input BookInput {
-bookId: ID!
-description: String!
-authors: [String!]
-title: String!
-image: String
-link: String
-}
-`;
 
 export const SAVE_BOOK = gql`
-mutation saveBook($BookInput: BookInput!) {
-  saveBook(BookInput: $BookInput){
+mutation saveBook($bookId: ID!) {
+  saveBook(bookId: $bookId){
   username
   email
   savedBooks {

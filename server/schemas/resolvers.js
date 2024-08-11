@@ -40,9 +40,11 @@ const resolvers = {
       console.log("Created Token", token);
       return { token, user };
     },
-    saveBook: async (parent, {BookInput}) => {
-      console.log('inside save book resolver');
-      console.log(BookInput);
+    saveBook: async (parent, {bookId}, context ) => {
+      console.log(context.user)
+      
+    
+      // return User.findOne({username :  })
 
     }
   },

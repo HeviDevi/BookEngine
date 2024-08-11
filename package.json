@@ -1,15 +1,33 @@
 {
-  "name": "bookengine",
+  "name": "googlebooks-app",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server/server.js",
   "scripts": {
-    "start": "cd Develop && npm start",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server/server.js",
+    "develop": "concurrently \"cd server && npm run watch\" \"cd client && npm start\"",
+    "install": "cd server && npm install && cd ../client && npm install",
+    "build": "cd client && npm run build",
+    "render-build": "npm install && npm run build"
   },
+  "keywords": [],
   "author": "",
   "license": "ISC",
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.1",
+    "concurrently": "^5.1.0",
+    "vite": "^5.3.5"
+  },
   "dependencies": {
-    "dotenv": "^16.4.5"
+    "@apollo/client": "^3.11.0",
+    "apollo": "^2.34.0",
+    "apollo-server": "^3.13.0",
+    "apollo-server-express": "^3.13.0",
+    "bootstrap": "^5.3.3",
+    "dotenv": "^16.4.5",
+    "graphql": "^16.9.0",
+    "mongodb": "^6.8.0",
+    "react": "^18.3.1",
+    "react-router-dom": "^6.25.1"
   }
 }
